@@ -1,0 +1,6 @@
+*.pyc
+__pycache__/
+.env
+venv/
+instance/
+database.db # Ignore your SQLite database file
