@@ -4,3 +4,4 @@ __pycache__/
 venv/
 instance/
 database.db # Ignore your SQLite database file
+database.db
