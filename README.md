@@ -97,6 +97,35 @@ Follow these steps to get the application running on your local machine:
 
 Feel free to fork the repository and contribute!
 
+## Running in Docker
+
+You can run this in a dockerized environment if you are not able to install or run python locally in your system, you will need to install Docker though
+
+Once you install Docker, run the following commands in the root of the application (same folder where app.py is located),
+
+```
+chmod +x *.sh
+```
+
+1. Make sure you have an .env set up properly according to the instructions above.
+
+2. clear out any old images that were running and remove any old copies of the database.db (the application will create it again when it first starts)
+```
+./clean.sh
+```
+2. Build the docker image that sets up python in the docker container
+```
+./build.sh
+```
+3. run the app in the container 
+
+```
+./run.sh
+```
+
+4. Navigate to http://localhost:5000 to test the app
+
+
 ## License
 
 This project is open-source. (You might want to add a specific license here, e.g., MIT, Apache 2.0)
