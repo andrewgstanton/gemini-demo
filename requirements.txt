@@ -1,1 +1,4 @@
-Flask==2.3.2 # Or the latest stable version
+Flask==2.3.2
+Flask-Mail==0.9.1 # Or the latest stable version
+itsdangerous==2.1.2 # Or the latest stable version
+python-dotenv==1.0.0 # To load environment variables

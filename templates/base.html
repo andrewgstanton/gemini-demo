@@ -14,6 +14,10 @@
                 <li><a href="{{ url_for('notes') }}">My Notes</a></li>
                 <li><a href="{{ url_for('add_note') }}">Add New Note</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout ({{ session.get('username') }})</a></li>
+                {# Check g.user_verified directly #}
+                {% if not g.user_verified %}
+                    <li><a href="{{ url_for('unconfirmed') }}">Verify Account</a></li>
+                {% endif %}
             {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>

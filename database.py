@@ -9,7 +9,9 @@ def init_db():
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE NOT NULL,
-            password TEXT NOT NULL
+            email TEXT UNIQUE NOT NULL,    
+            password TEXT NOT NULL,
+            verified BOOLEAN NOT NULL DEFAULT 0 
         )
     ''')
     cursor.execute('''
@@ -26,10 +28,9 @@ def init_db():
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
-    conn.row_factory = sqlite3.Row # Allows accessing columns by name (e.g., row['username'])
+    conn.row_factory = sqlite3.Row
     return conn
 
 if __name__ == '__main__':
-    # This block allows you to run `python database.py` to initialize the database separately
     init_db()
     print(f"Database '{DATABASE}' initialized successfully.")
